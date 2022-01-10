@@ -10,13 +10,22 @@ services:
       - bnet
 
   mongodb:
-    image: mongo:3.2.17
+    image: mongo:3.6
     ports:
       - 127.0.0.1:27017:27017
     volumes:
-      - ./mongodb:/data/db
+      - ./mongodb36:/data/db
     networks:
       - bnet
+
+#  mongodb32:
+#    image: mongo:3.2.17
+#    ports:
+#      - 127.0.0.1:27018:27017
+#    volumes:
+#      - ./mongodb:/data/db
+#    networks:
+#      - bnet
 
 networks:
   bnet:
